@@ -1,6 +1,18 @@
 # DSTserver-setup
 
-Record of the setup of Don't Starve Together.
+## 前言
+
+玩过饥荒联机版的小伙伴都知道，饥荒联机版里玩家自建房间的网络连接往往让人很不爽，和异地的好友联机时要么就是找不到房间，半个小时都连不了；要么就是延迟高上天，打个蜘蛛都疯狂回溯，跑路时走着走着就飘起来了，基本不在同一个局域网下就无法收获良好的游戏体验。如何才能提高联机游戏的体验呢？
+
+不嫌折腾的同学们可能已经想到了：自己在云服务器上搭建一个游戏服务器不就好了？说干就干，今天就来分享一下如何在 Linux 服务器上搭建饥荒联机版的服务器。
+
+## LGSM 介绍
+
+Linux Game Server Managers (lgsm) 是可以快速在 Linux 系统上部署在线游戏服务器的命令行工具。
+
+截止 2021/03/23 日，lgsm 已经支持了 117 个游戏服务器的部署，其中包括许多时下十分火爆的游戏：CS:GO, Minecraft, Don't Starve Together, ARK, L4D2, Unturned, Garry's Mod, Terraria 等等，尤其对 source 引擎开发的游戏具有更加全面的支持。
+
+对于 Steam 上的游戏，lgsm 通过 steamcmd 进行操作。steamcmd 是 Steam 的命令行版本，适合游戏服务器的部署，单用 steamcmd 也可以完成游戏服务器的搭建。说起 lgsm 与 steamcmd 的关系，可以说 lgsm 是包装在steamcmd 外面的一个容器，服主无需接触steamcmd 即可通过 lgsm 进行对游戏的下载、管理、更新、添加关键模组和卸载等操作，避免了许多繁琐复杂的步骤，不用考虑系统兼容性的问题，也不需要了解过多艰深的服务器管理知识，是本人认为目前搭建游戏服务器最好的通用方案。
 
 ## 文件结构
 
